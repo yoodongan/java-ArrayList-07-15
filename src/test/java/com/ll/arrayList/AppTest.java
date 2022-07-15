@@ -1,5 +1,6 @@
 package com.ll.arrayList;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -8,23 +9,29 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppTest {
+    private ArrayList al;
+    @BeforeEach
+    void ArrayList_클래스_생성하기() {
+        al = new ArrayList();
+    }
+
     @Test
     void ArrayList_클래스가_존재한다() {
-        ArrayList al = new ArrayList();
+        ArrayList_클래스_생성하기();
     }
     @Test
     void size() {
-        ArrayList al = new ArrayList();
+        ArrayList_클래스_생성하기();
         assertEquals(0, al.size());
     }
     @Test
     void add() {
-        ArrayList al = new ArrayList();
+        ArrayList_클래스_생성하기();
         al.add(100);
     }
     @Test
     void get() {
-        ArrayList al = new ArrayList();
+        ArrayList_클래스_생성하기();
         al.add(100);
         int rs = al.get(0);
 
@@ -32,7 +39,7 @@ public class AppTest {
     }
     @Test
     void add를_한번_할_때_마다_size가_증가() {
-        ArrayList al = new ArrayList();
+        ArrayList_클래스_생성하기();
         al.add(100);
         al.add(200);
         al.add(300);
@@ -41,7 +48,7 @@ public class AppTest {
     }
     @Test
     void get_1_equals_200() {
-        ArrayList al = new ArrayList();
+        ArrayList_클래스_생성하기();
         al.add(100);
         al.add(200);
         al.add(300);
@@ -51,7 +58,7 @@ public class AppTest {
     }
     @Test
     void removeAt() {
-        ArrayList al = new ArrayList();
+        ArrayList_클래스_생성하기();
         al.add(100);
         al.add(200);
         al.add(300);
@@ -60,7 +67,7 @@ public class AppTest {
     }
     @Test
     void removeAt을_실행하면_뒷좌석에_있는_데이터들이_전부_한칸씩_앞으로_이동() {
-        ArrayList al = new ArrayList();
+        ArrayList_클래스_생성하기();
         al.add(100);
         al.add(200);
         al.add(300);
@@ -73,13 +80,13 @@ public class AppTest {
     }
     @Test
     void 최초에_배열의_크기는_2_이다() {
-        ArrayList al = new ArrayList();
+        ArrayList_클래스_생성하기();
 
         assertEquals(2, al.getArrayLength());
     }
     @Test
     void 배열이_꽉_차면_2배_크기로_증가해야_한다() {
-        ArrayList al = new ArrayList();
+        ArrayList_클래스_생성하기();
         al.add(100);
         al.add(200);
         assertEquals(2, al.getArrayLength());
@@ -88,7 +95,7 @@ public class AppTest {
     }
     @Test
     void showAllValues() {
-        ArrayList al = new ArrayList();
+        ArrayList_클래스_생성하기();
         al.add(1000);
         al.add(200);
         al.add(30);
@@ -108,7 +115,7 @@ public class AppTest {
     }
     @Test
     public void addAt() {
-        ArrayList al = new ArrayList();
+        ArrayList_클래스_생성하기();
         al.add(100);
         al.add(200);
         al.add(300);
